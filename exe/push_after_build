@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+# coding: utf-8
+require 'terminal-notifier'
+
+
+pid = spawn(ARGV.join(' '))
+Process.wait(pid)
+TerminalNotifier.notify('さぁ、仕事の時間だ！', sound: 'default', title: 'ビルド終わったよ(・∀・)ゝ')
